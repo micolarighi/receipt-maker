@@ -20,8 +20,12 @@ function parseFloatHTML(element) {
 const idStruk = document.querySelector('.idStruk')
 const zeroPad = (num, places) => String(num).padStart(places, '0')
 
-idStruk.innerHTML = zeroPad(localStorage.getItem('id'), 10)
 
+if(localStorage.getItem('id') == null) {
+	idStruk.innerHTML = zeroPad(1, 10)
+} else {
+	idStruk.innerHTML = zeroPad(localStorage.getItem('id'), 10)
+}
 
 
 btn_print.addEventListener('click', () => {
