@@ -72,25 +72,25 @@ function generateTableRow() {
 	
 	emptyColumn.innerHTML = `
 	<td><a class="cut">-</a>
-								<select class="pilihBarang">
-									<option selected>--Pilih Barang--</option>
-									<option value="1">Plat Folio (254 x 394)</option>
-									<option value="2">Plat GTO (400 x 510)</option>
-									<option value="3">Plat SM 52 (459 x 254)</option>
-									<option value="4">Plat Oliver 58 (570 x 508)</option>
-									<option value="5">Plat MO (550 x 650)</option>
-									<option value="6">Plat Komori (560 x 670)</option>
-									<option value="7">Oliver 72/ SM 72 (615 x 724)</option>
-									<option value="8">Film pos-neg (A4)</option>
-									<option value="9">Film pos-net (/cm)</option>
-									
-								</select>
-							
-							<span contenteditable spellcheck="false" style="display: none;">Front End Consultation</span></td>
-						<td style="display: none;"><span contenteditable spellcheck="false">Experience Review</span></td>
-						<td><span data-prefix>Rp </span><span spellcheck="false"  class="harga">0</span></td>
-						<td><span contenteditable spellcheck="false">1</span></td>
-						<td><span data-prefix>Rp </span><span>600.00</span></td>`
+	<select class="pilihBarang" onclick="updateInvoice()">
+		<option selected>--Pilih Barang--</option>
+		<option value="1">Plat TOKO (254 x 394)</option>
+		<option value="2">Plat GTO (400 x 510)</option>
+		<option value="3">Plat SM 52 (459 x 574)</option>
+		<option value="4">Plat Oliver 58 (508 x 570)</option>
+		<option value="5">Plat MO (550 x 650)</option>
+		<option value="6">Plat Komori (560 x 670)</option>
+		<option value="7">Plat Oliver 72 (605 x 724)</option>
+		<option value="8">Plat SM 72 (615 x 724)</option>
+		<option value="9">Film pos-neg (A4)</option>
+		<option value="10">Film pos-net (/cm)</option>
+	</select>
+
+<span contenteditable spellcheck="false" style="display: none;">Front End Consultation</span></td>
+<td style="display: none;"><span contenteditable spellcheck="false">Experience Review</span></td>
+<td><span data-prefix>Rp </span><span class="harga" contenteditable="" spellcheck="false"  >0</span></td>
+<td><span contenteditable spellcheck="false">1</span></td>
+<td class="text-end"><span data-prefix>Rp </span><span>600.00</span></td>`
 	
 	return emptyColumn;
 }
@@ -111,25 +111,39 @@ function updateNumber(e) {
 	activeElement = document.activeElement,
 	value = parseFloat(activeElement.innerHTML),
 	wasPrice = activeElement.innerHTML == parsePrice(parseFloatHTML(activeElement));
-	
+
 	if (!isNaN(value) && (e.keyCode == 38 || e.keyCode == 40 || e.wheelDeltaY)) {
 		e.preventDefault();
-		
+
 		value += e.keyCode == 38 ? 1 : e.keyCode == 40 ? -1 : Math.round(e.wheelDelta * 0.025);
 		value = Math.max(value, 0);
-		
+
 		activeElement.innerHTML = wasPrice ? parsePrice(value) : value;
 	}
-	
+
 	updateInvoice();
+}
+
+let inputManual = false
+
+function modeInputManual() {
+	inputManual = !inputManual
+	for (a = document.querySelectorAll('.harga'), i = 0; i < a.length; ++i) if (document.activeElement != a[i]) a[i].innerHTML = '';
+	updateInvoice()
 }
 
 /* Update Invoice
 /* ========================================================================== */
 
 function updateInvoice() {
+	const btnModeInput = document.getElementById('btn-mode-input')
+	if (inputManual) {
+		btnModeInput.innerHTML = 'Mode Input : Manual'
+	} else {
+		btnModeInput.innerHTML = 'Mode Input : Auto'
+	}
 
-	const listHarga = [12000, 22000, 24000, 34000, 40000, 43000, 54000, 32000, 50]
+	const listHarga = [12000, 22000, 24000, 35000, 42000, 45000, 55000, 56000,32000, 50]
 
 	var total = 0;
 	var cells, price, total, a, i;
@@ -160,29 +174,20 @@ function updateInvoice() {
 	// set total
 	cells[0].innerHTML = total;
 	
-	// set balance and meta balance
-	cells[2].innerHTML = document.querySelector('table.meta tr:last-child td:last-child span:last-child').innerHTML = parsePrice(total - parseFloatHTML(cells[1]));
-	
 	// update prefix formatting
 	// ========================
 	
 	var prefix = document.querySelector('#prefix').innerHTML;
 	for (a = document.querySelectorAll('[data-prefix]'), i = 0; a[i]; ++i) a[i].innerHTML = prefix;
 	
-	// update price formatting
-	// =======================
-	
-	for (a = document.querySelectorAll('span[data-prefix] + span'), i = 0; a[i]; ++i) if (document.activeElement != a[i]) a[i].innerHTML = parsePrice(parseFloatHTML(a[i]));
 
-	
 	const pilihBarang = document.querySelectorAll('.pilihBarang')
 	
-	for (a = document.querySelectorAll('.harga'), i = 0; i < a.length; ++i) if (document.activeElement != a[i]) a[i].innerHTML = listHarga[pilihBarang[i].value - 1];
-	
-	
-
+	if (inputManual == false) {
+		for (a = document.querySelectorAll('.harga'), i = 0; i < a.length; ++i) if (document.activeElement != a[i]) a[i].innerHTML = listHarga[pilihBarang[i].value - 1];
+	} 
+			
 }
-
 
 
 /* On Content Load
@@ -197,9 +202,9 @@ function onContentLoad() {
 	
 	function onClick(e) {
 		var element = e.target.querySelector('[contenteditable]'), row;
-
+		
 		element && e.target != document.documentElement && e.target != document.body && element.focus();
-
+		
 		if (e.target.matchesSelector('.add')) {
 			document.querySelector('table.inventory tbody').appendChild(generateTableRow());
 		}
@@ -208,22 +213,22 @@ function onContentLoad() {
 
 			row.parentNode.removeChild(row);
 		}
-
+		
 		updateInvoice();
 	}
-
+	
 	function onEnterCancel(e) {
 		e.preventDefault();
-
+		
 		image.classList.add('hover');
 	}
-
+	
 	function onLeaveCancel(e) {
 		e.preventDefault();
-
+		
 		image.classList.remove('hover');
 	}
-
+	
 	function onFileInput(e) {
 		image.classList.remove('hover');
 
@@ -231,36 +236,35 @@ function onContentLoad() {
 		reader = new FileReader(),
 		files = e.dataTransfer ? e.dataTransfer.files : e.target.files,
 		i = 0;
-
+		
 		reader.onload = onFileLoad;
 
 		while (files[i]) reader.readAsDataURL(files[i++]);
 	}
-
+	
 	function onFileLoad(e) {
 		var data = e.target.result;
-
+		
 		image.src = data;
 	}
-
 	if (window.addEventListener) {
 		document.addEventListener('click', onClick);
-
+		
 		document.addEventListener('mousewheel', updateNumber);
 		document.addEventListener('keydown', updateNumber);
-
+		
 		document.addEventListener('keydown', updateInvoice);
 		document.addEventListener('keyup', updateInvoice);
-
+		
 		input.addEventListener('focus', onEnterCancel);
 		input.addEventListener('mouseover', onEnterCancel);
 		input.addEventListener('dragover', onEnterCancel);
 		input.addEventListener('dragenter', onEnterCancel);
-
+		
 		input.addEventListener('blur', onLeaveCancel);
 		input.addEventListener('dragleave', onLeaveCancel);
 		input.addEventListener('mouseout', onLeaveCancel);
-
+		
 		input.addEventListener('drop', onFileInput);
 		input.addEventListener('change', onFileInput);
 	}
