@@ -189,6 +189,6 @@ tr:hover .cut { opacity: 1; }
 	html { background: none; padding: 0; }
 	body { box-shadow: none; margin: 0; }
 	span:empty { display: none; }
-	.add, .cut, #btn-print { display: none; }
+	.add, .cut, #btn-mode-input,#btn-print, #btn-refresh { display: none; }
 	
 }
