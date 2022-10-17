@@ -14,7 +14,7 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 /* content editable */
@@ -35,21 +35,36 @@ h1 { font: bold 100% sans-serif; text-align: center; text-transform: uppercase; 
 
 table { font-size: 75%; table-layout: fixed; width: 100%; }
 table { border-collapse: separate; border-spacing: 4px; }
-th, td { border-width: 1px; padding: 0.2em; position: relative; text-align: left; }
+th, td { border-width: 1px; padding: 0.1em; position: relative; text-align: left; }
 th, td { border-radius: 0.25em; border-style: solid; }
 th { background: #EEE; border-color: #BBB; }
 td { border-color: #DDD; }
 
 /* page */
 
-html { font: 16px/1 'Open Sans', sans-serif; padding: 0.5in; }
-html { background: #999; cursor: default; }
+html { font: 16px/1 'Open Sans', sans-serif; padding: 0.1in; }
+html { background: #999; cursor: default;}
 
 body { box-sizing: border-box;
-	; margin: 0 auto; padding: 0.5in; width: 216.3mm;}
+	; margin: 0 auto; padding: 0.15in; width: 72.1mm;}
 body { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5); }
 
 /* header */
+
+.fs-1 {
+	font-size: 10px !important;
+}
+.fs-4 {
+	font-size: 9px !important;
+}
+.fs-5 {
+	font-size: 7px !important;
+}
+
+.fs-6 {
+	font-size: 6px !important;
+}
+
 
 
 header input { cursor: pointer; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; height: 100%; left: 0; opacity: 0; position: absolute; top: 0; width: 100%; }
@@ -63,9 +78,18 @@ header h6 {
 }
 
 hr {
-	border-top: 2px dashed black;
+	border-top: 1px dashed black;
 	margin-bottom: 10px;
 	margin-top: -10px;
+}
+
+option {
+	font-size: 18px;
+}
+
+select {
+	outline: none;
+	border: none;
 }
 
 .del {
@@ -73,7 +97,7 @@ hr {
 }
 
 span, select {
-	font-size: 18px;
+	font-size: 7px;
 }
 
 /* article */
@@ -104,8 +128,9 @@ table.inventory td { text-align: center; }
 table.inventory th:nth-child(1) {
 	width: 40%;
 }
+
 table.inventory th:nth-child(3) {
-	width: 20%;
+	width: 18%;
 }
 table.inventory th:nth-child(4) {
 	width: 5%;
