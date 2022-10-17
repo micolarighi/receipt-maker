@@ -37,7 +37,7 @@ h1 { font: bold 100% sans-serif; text-align: center; text-transform: uppercase; 
 table { font-size: 75%; table-layout: fixed; width: 100%; }
 table { border-collapse: separate; border-spacing: 1.8px; }
 th, td { border-width: 1.3px; position: relative; text-align: left; }
-th, td { border-radius: 0.1em; border-style: solid; padding: 0.02em; }
+th, td { border-radius: 0.1em; border-style: solid; padding: 0.2em; }
 th { border-color: rgb(0, 0, 0); }
 td { border-color: rgb(0, 0, 0); }
 
@@ -55,8 +55,12 @@ body { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0,
 .fs-1 {
 	font-size: 15px !important;
 }
+
+.fs-3 {
+	font-size: 12px !important;
+}
 .fs-4 {
-	font-size: 9px !important;
+	font-size: 10px !important;
 }
 .fs-5 {
 	font-size: 10px !important;
@@ -102,8 +106,18 @@ select {
 	display: none;
 }
 
-span, select {
-	font-size: 9px;
+span {
+	font-size: 12px;
+}
+
+select {
+	font-size: 8.5px;
+	padding: 0!important;
+	max-width: 95%;
+}
+
+.qtt {
+	font-size: 8.5px;
 }
 
 /* article */
@@ -127,7 +141,7 @@ table.meta td { width: 60%; }
 /* table items */
 
 table.inventory { clear: both;}
-table.inventory th { font-weight: bold; text-align: center; }
+table.inventory th { font-weight: bold; text-align: center;}
 table.inventory td { text-align: center; }
 
 
@@ -183,6 +197,7 @@ select {
 	padding: 0.25em 0.5em;	
 	width: 0.8em;
 	text-decoration: none;
+	color: white !important;
 }
 
 .add, .cut
@@ -226,4 +241,7 @@ tr:hover .cut { opacity: 1; }
 	span:empty { display: none; }
 	.add, .cut, #btn-mode-input,#btn-print, #btn-refresh { display: none; }
 	
+}
+th span{
+	font-size: 8px !important;
 }

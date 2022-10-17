@@ -88,9 +88,9 @@ function generateTableRow() {
 							
 							<span contenteditable spellcheck="false" style="display: none;">Front End Consultation</span></td>
 						<td style="display: none;"><span contenteditable spellcheck="false">Experience Review</span></td>
-						<td><span data-prefix class="fw-bold">Rp </span><span class="harga fw-bold" contenteditable="" spellcheck="false"  >0</span></td>
-						<td><span class="fw-bold" contenteditable spellcheck="false">1</span></td>
-						<td class="text-end fw-bold"><span data-prefix>Rp </span><span>600.00</span></td>
+						<td><span  class="fw-bold"> </span><span class="harga fw-bold" contenteditable="" spellcheck="false"  >0</span></td>
+						<td><span class="fw-bold qtt" contenteditable spellcheck="false">1</span></td>
+						<td class="text-end fw-bold"><span ></span><span>600.00</span></td>
 					`
 	
 	return emptyColumn;
