@@ -5,7 +5,7 @@
 	border: 0;
 	box-sizing: content-box;
 	color: inherit;
-	font-family: Helvetica;
+	font-family: 'Times New Roman', Times, serif;
 	font-size: inherit;
 	font-style: inherit;
 	font-weight: inherit;
@@ -15,6 +15,7 @@
 	padding: 0;
 	text-decoration: none;
 	vertical-align: 20%;
+	color: #000 !important;
 }
 
 /* content editable */
@@ -131,7 +132,7 @@ table.inventory td { text-align: center; }
 
 
 table.inventory th:nth-child(1) {
-	width: 40%;
+	width: 45%;
 }
 
 table.inventory th:nth-child(3) {
