@@ -34,11 +34,11 @@ h1 { font: bold 100% sans-serif; text-align: center; text-transform: uppercase; 
 /* table */
 
 table { font-size: 75%; table-layout: fixed; width: 100%; }
-table { border-collapse: separate; border-spacing: 2px; }
-th, td { border-width: 1px; position: relative; text-align: left; }
-th, td { border-radius: 0.25em; border-style: solid; padding: 0.08em; }
-th { background: #EEE; border-color: #BBB; }
-td { border-color: #DDD; }
+table { border-collapse: separate; border-spacing: 1.8px; }
+th, td { border-width: 1.3px; position: relative; text-align: left; }
+th, td { border-radius: 0.1em; border-style: solid; padding: 0.02em; }
+th { border-color: rgb(0, 0, 0); }
+td { border-color: rgb(0, 0, 0); }
 
 /* page */
 
@@ -52,17 +52,21 @@ body { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0,
 /* header */
 
 .fs-1 {
-	font-size: 10px !important;
+	font-size: 15px !important;
 }
 .fs-4 {
 	font-size: 9px !important;
 }
 .fs-5 {
-	font-size: 7px !important;
+	font-size: 10px !important;
 }
 
 .fs-6 {
-	font-size: 6px !important;
+	font-size: 8px !important;
+}
+
+.col {
+	padding: 0!important;
 }
 
 
@@ -97,7 +101,7 @@ select {
 }
 
 span, select {
-	font-size: 7px;
+	font-size: 9px;
 }
 
 /* article */
@@ -130,13 +134,13 @@ table.inventory th:nth-child(1) {
 }
 
 table.inventory th:nth-child(3) {
-	width: 18%;
+	width: 20%;
 }
 table.inventory th:nth-child(4) {
-	width: 5%;
+	width: 8%;
 }
 table.inventory th:nth-child(5) {
-	width: 25%;
+	width: 23%;
 }
 
 
@@ -152,6 +156,10 @@ aside h1 { border-color: #999; border-bottom-style: solid; }
 .form-select {
 	width: auto !important;
 	font-size: 12px;
+}
+
+select {
+	padding: 0!important;
 }
 
 /* javascript */

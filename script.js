@@ -143,7 +143,7 @@ function updateInvoice() {
 		btnModeInput.innerHTML = 'Mode Input : Auto'
 	}
 
-	const listHarga = [12000, 22000, 24000, 35000, 42000, 45000, 55000, 56000,32000, 50]
+	const listHarga = [12000, 22000, 24000, 35000, 42000, 45000, 55000, 56000,32000, 50, "xx"]
 
 	var total = 0;
 	var cells, price, total, a, i;
