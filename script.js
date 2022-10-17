@@ -98,32 +98,36 @@ function generateTableRow() {
 
 function parseFloatHTML(element) {
 	return parseFloat(element.innerHTML.replace(/[^\d\.\-]+/g, '')) || 0;
-}
-
-function parsePrice(number) {
+  }
+  
+  function parsePrice(number) {
 	return number.toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1,');
-}
+  }
 
+function convertNumber(number) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
 /* Update Number
 /* ========================================================================== */
 
 function updateNumber(e) {
 	var
 	activeElement = document.activeElement,
-	value = parseFloat(activeElement.innerHTML),
-	wasPrice = activeElement.innerHTML == parsePrice(parseFloatHTML(activeElement));
-
+		value = parseFloat(activeElement.innerHTML),
+		wasPrice = activeElement.innerHTML == parsePrice(parseFloatHTML(activeElement));
+  
 	if (!isNaN(value) && (e.keyCode == 38 || e.keyCode == 40 || e.wheelDeltaY)) {
-		e.preventDefault();
-
-		value += e.keyCode == 38 ? 1 : e.keyCode == 40 ? -1 : Math.round(e.wheelDelta * 0.025);
-		value = Math.max(value, 0);
-
-		activeElement.innerHTML = wasPrice ? parsePrice(value) : value;
+	  e.preventDefault();
+  
+	  value += e.keyCode == 38 ? 1 : e.keyCode == 40 ? -1 : Math.round(e.wheelDelta * 0.025);
+	  value = Math.max(value, 0);
+  
+	  activeElement.innerHTML = wasPrice ? parsePrice(value) : value;
 	}
-
+  
 	updateInvoice();
-}
+  }
+  
 
 let inputManual = false
 
@@ -144,7 +148,7 @@ function updateInvoice() {
 		btnModeInput.innerHTML = 'Mode Input : Auto'
 	}
 
-	const listHarga = [12000, 22000, 24000, 35000, 42000, 45000, 55000, 56000,32000, 50, "xx"]
+	const listHarga = [12000, 22000, 24000, 35000, 42000, 45000, 55000, 56000, 32000, 50, "xx"]
 
 	var total = 0;
 	var cells, price, total, a, i;
@@ -163,7 +167,7 @@ function updateInvoice() {
 		total += price;
 		
 		// set row total
-		cells[4].innerHTML = price;
+		cells[4].innerHTML = convertNumber(price * 1000);
 	}
 	
 	// update balance cells
@@ -173,7 +177,7 @@ function updateInvoice() {
 	cells = document.querySelectorAll('table.balance td:last-child span:last-child');
 	
 	// set total
-	cells[0].innerHTML = total;
+	cells[0].innerHTML = convertNumber(total * 1000);
 	
 	// update prefix formatting
 	// ========================
@@ -185,7 +189,7 @@ function updateInvoice() {
 	const pilihBarang = document.querySelectorAll('.pilihBarang')
 	
 	if (inputManual == false) {
-		for (a = document.querySelectorAll('.harga'), i = 0; i < a.length; ++i) if (document.activeElement != a[i]) a[i].innerHTML = listHarga[pilihBarang[i].value - 1];
+		for (a = document.querySelectorAll('.harga'), i = 0; i < a.length; ++i) if (document.activeElement != a[i]) a[i].innerHTML = convertNumber(listHarga[pilihBarang[i].value - 1]);
 	} 
 			
 }
