@@ -71,26 +71,27 @@ function generateTableRow() {
 	var emptyColumn = document.createElement('tr');
 	
 	emptyColumn.innerHTML = `
-	<td><a class="cut">-</a>
-	<select class="pilihBarang" onclick="updateInvoice()">
-		<option selected>--Pilih Barang--</option>
-		<option value="1">Plat TOKO (254 x 394)</option>
-		<option value="2">Plat GTO (400 x 510)</option>
-		<option value="3">Plat SM 52 (459 x 574)</option>
-		<option value="4">Plat Oliver 58 (508 x 570)</option>
-		<option value="5">Plat MO (550 x 650)</option>
-		<option value="6">Plat Komori (560 x 670)</option>
-		<option value="7">Plat Oliver 72 (605 x 724)</option>
-		<option value="8">Plat SM 72 (615 x 724)</option>
-		<option value="9">Film pos-neg (A4)</option>
-		<option value="10">Film pos-net (/cm)</option>
-	</select>
-
-<span contenteditable spellcheck="false" style="display: none;">Front End Consultation</span></td>
-<td style="display: none;"><span contenteditable spellcheck="false">Experience Review</span></td>
-<td><span data-prefix>Rp </span><span class="harga" contenteditable="" spellcheck="false"  >0</span></td>
-<td><span contenteditable spellcheck="false">1</span></td>
-<td class="text-end"><span data-prefix>Rp </span><span>600.00</span></td>`
+						<td><a class="cut fs-6">-</a>
+								<select class="pilihBarang text-start fw-bold" onclick="updateInvoice()">
+									<option value="11" selected>--Pilih Barang--</option>
+									<option value="1">Plat TOKO (254 x 394)</option>
+									<option value="2">Plat GTO (400 x 510)</option>
+									<option value="3">Plat SM 52 (459 x 574)</option>
+									<option value="4">Plat Oliver 58 (508 x 570)</option>
+									<option value="5">Plat MO (550 x 650)</option>
+									<option value="6">Plat Komori (560 x 670)</option>
+									<option value="7">Plat Oliver 72 (605 x 724)</option>
+									<option value="8">Plat SM 72 (615 x 724)</option>
+									<option value="9">Film pos-neg (A4)</option>
+									<option value="10">Film pos-net (/cm)</option>
+								</select>
+							
+							<span contenteditable spellcheck="false" style="display: none;">Front End Consultation</span></td>
+						<td style="display: none;"><span contenteditable spellcheck="false">Experience Review</span></td>
+						<td><span data-prefix class="fw-bold">Rp </span><span class="harga fw-bold" contenteditable="" spellcheck="false"  >0</span></td>
+						<td><span class="fw-bold" contenteditable spellcheck="false">1</span></td>
+						<td class="text-end fw-bold"><span data-prefix>Rp </span><span>600.00</span></td>
+					`
 	
 	return emptyColumn;
 }
