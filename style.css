@@ -43,7 +43,7 @@ td { border-color: #DDD; }
 /* page */
 
 html { font: 16px/1 'Open Sans', sans-serif; padding: 0.1in; }
-html { background: #999; cursor: default;}
+html { background: #999; cursor: default; scale: 2; margin-top: 30vh;}
 
 body { box-sizing: border-box;
 	; margin: 0 auto; padding: 0.15in; width: 72.1mm;}
@@ -84,7 +84,7 @@ hr {
 }
 
 option {
-	font-size: 18px;
+	font-size: 12px;
 }
 
 select {
