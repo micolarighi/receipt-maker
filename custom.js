@@ -30,7 +30,6 @@ if(localStorage.getItem('id') == null) {
 
 btn_print.addEventListener('click', () => {
 	localStorage.setItem('id', parseFloatHTML(idStruk) + 1)
-	location.reload()
 })
 
 
