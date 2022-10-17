@@ -14,7 +14,7 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	vertical-align: middle;
+	vertical-align: 20%;
 }
 
 /* content editable */
@@ -36,7 +36,7 @@ h1 { font: bold 100% sans-serif; text-align: center; text-transform: uppercase; 
 table { font-size: 75%; table-layout: fixed; width: 100%; }
 table { border-collapse: separate; border-spacing: 2px; }
 th, td { border-width: 1px; position: relative; text-align: left; }
-th, td { border-radius: 0.25em; border-style: solid; }
+th, td { border-radius: 0.25em; border-style: solid; padding: 0.08em; }
 th { background: #EEE; border-color: #BBB; }
 td { border-color: #DDD; }
 
