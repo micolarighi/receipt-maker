@@ -1,11 +1,17 @@
 /* reset */
+@font-face {
+	font-family: header;
+	src: url(fonts/HATTEN.TTF);
+	font-family: text;
+	src: url(fonts/MinionPro-Bold.otf);
+  }
 
 *
 {
 	border: 0;
 	box-sizing: content-box;
 	color: inherit;
-	font-family: 'Times New Roman', Times, serif;
+	font-family: header;
 	font-size: inherit;
 	font-style: inherit;
 	font-weight: inherit;
@@ -14,7 +20,7 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	vertical-align: 20%;
+	vertical-align: middle;
 	color: #000 !important;
 }
 
@@ -107,7 +113,7 @@ select {
 }
 
 span {
-	font-size: 12px;
+	font-size: 11px;
 }
 
 select {
@@ -243,5 +249,10 @@ tr:hover .cut { opacity: 1; }
 	
 }
 th span{
-	font-size: 8px !important;
+	font-size: 11px !important;
+	line-height: 0.1 !important;
+}
+
+.inventory th {
+	line-height: 0.85;
 }
