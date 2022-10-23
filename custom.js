@@ -21,9 +21,9 @@ const zeroPad = (num, places) => String(num).padStart(places, '0')
 
 
 if(localStorage.getItem('id') == null) {
-	idStruk.innerHTML = zeroPad(1, 10)
+	idStruk.innerHTML = zeroPad(1, 8)
 } else {
-	idStruk.innerHTML = zeroPad(localStorage.getItem('id'), 10)
+	idStruk.innerHTML = zeroPad(localStorage.getItem('id'), 8)
 }
 
 
