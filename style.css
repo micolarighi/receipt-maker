@@ -43,7 +43,7 @@ h1 { font: bold 100% sans-serif; text-align: center; text-transform: uppercase; 
 table { font-size: 75%; table-layout: fixed; width: 100%; }
 table { border-collapse: separate; border-spacing: 2px }
 th, td { border-width: 1.3px; position: relative; text-align: left; }
-th, td { border-radius: 0.1em; border-style: solid; padding: 0.2em; }
+th, td { border-radius: 0.1em; border-style: solid; padding: 0.1em; }
 th { border-color: rgb(0, 0, 0); }
 td { border-color: rgb(0, 0, 0); }
 
