@@ -245,13 +245,18 @@ th span{
 	line-height: 0.1 !important;
 }
 
+span {
+	font-size: 15px !important;
+}
+
 .inventory th {
 	line-height: 0.85;
 }
 @media print {
 	* { -webkit-print-color-adjust: exact; }
 	html { background: none; padding: 0; margin: 0 !important;}
-	body { box-shadow: none; margin: 0 !important; }
+	body { box-shadow: none; margin: 0 !important; padding: 0 !important;}
+	th, td { border-radius: 0.1em; border-style: solid; padding: 0.1em; }
 	span:empty { display: none; }
 	.add, .cut, #btn-mode-input,#btn-print, #btn-refresh { display: none; }
 	
