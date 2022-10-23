@@ -43,7 +43,7 @@ h1 { font: bold 100% sans-serif; text-align: center; text-transform: uppercase; 
 table { font-size: 75%; table-layout: fixed; width: 100%; }
 table { border-collapse: separate; border-spacing: 2px }
 th, td { border-width: 1.3px; position: relative; text-align: left; }
-th, td { border-radius: 0.1em; border-style: solid; padding: 0.1em; }
+th, td { border-radius: 0.1em; border-style: solid; padding: 0.2em; }
 th { border-color: rgb(0, 0, 0); }
 td { border-color: rgb(0, 0, 0); }
 
@@ -256,7 +256,7 @@ span {
 	* { -webkit-print-color-adjust: exact; }
 	html { background: none; padding: 0; margin: 0 !important;}
 	body { box-shadow: none; margin: 0 !important; padding: 0 !important;}
-	th, td { border-radius: 0.1em; border-style: solid; padding: 0.1em; }
+	th, td { border-radius: 0.1em; border-style: solid; padding: 0.2em; }
 	span:empty { display: none; }
 	.add, .cut, #btn-mode-input,#btn-print, #btn-refresh { display: none; }
 	
