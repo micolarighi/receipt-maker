@@ -254,8 +254,8 @@ span {
 }
 @media print {
 	* { -webkit-print-color-adjust: exact; }
-	html { background: none; padding: 0; margin: 0 !important;}
-	body { box-shadow: none; margin: 0 !important; padding: 0 !important;}
+	html { background: none; padding: 0; margin: 0;}
+	body { box-shadow: none; margin: 0 !important; }
 	th, td { border-radius: 0.1em; border-style: solid; padding: 0.2em; }
 	span:empty { display: none; }
 	.add, .cut, #btn-mode-input,#btn-print, #btn-refresh { display: none; }
